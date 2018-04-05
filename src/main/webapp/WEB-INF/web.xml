@@ -6,6 +6,17 @@
 
 	<display-name>Spring Mvc</display-name>
 
+	<listener>
+
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<context-param>
+
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/context/application-context.xml</param-value>
+	</context-param>
+
 
 	<servlet>
 
@@ -16,6 +27,8 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/context/mvc-context.xml</param-value>
 		</init-param>
+
+		<load-on-startup>2</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
