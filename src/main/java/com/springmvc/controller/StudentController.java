@@ -3,9 +3,12 @@ package com.springmvc.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -54,13 +57,20 @@ public class StudentController {
 	}
 
 	@RequestMapping(value = "/stdenroll", method = RequestMethod.POST)
-	public ModelAndView registration(@ModelAttribute(name = "studentcommand") StudentCommand studentCommand) {
+	public ModelAndView registration(@ModelAttribute(name = "studentcommand") @Valid StudentCommand studentCommand,
+			BindingResult bindingResult) {
+
+		ModelAndView modelAndView = new ModelAndView();
+
+		if (bindingResult.hasErrors()) {
+
+			modelAndView.setViewName("enroll");
+			return modelAndView;
+		}
 
 		System.out.println("----------enroll reg post-----");
 
 		studentService.save(studentCommand);
-
-		ModelAndView modelAndView = new ModelAndView();
 
 		modelAndView.setViewName("enrollsuccess");
 

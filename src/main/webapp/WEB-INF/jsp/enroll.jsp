@@ -19,34 +19,34 @@
 
 			<tr>
 				<td>Enter Name</td>
-				<td><form:input type="text" path="name" /></td>
+				<td><form:input type="text" path="name" /><font color="red"><form:errors path="name"/></font></td>
 			</tr>
 
 			<tr>
 				<td>Enter Qualification</td>
-				<td><form:select path="qualification" items="${qualifications}" /></td>
+				<td><form:select path="qualification" items="${qualifications}" /><font color="red"><form:errors path="qualification"/></font></td>
 			</tr>
 
 
 			<tr>
 				<td>Enter Gender</td>
 				<td><form:radiobutton path="gender" value="male" />Male<form:radiobutton
-						path="gender" value="female" />Female</td>
+						path="gender" value="female" />Female<font color="red"><form:errors path="qualification"/></font></td>
 			</tr>
 
 			<tr>
 				<td>Enter Address</td>
-				<td><form:input type="text" path="address" /></td>
+				<td><form:input type="text" path="address" /><font color="red"><form:errors path="address"/></font></td>
 			</tr>
 
 			<tr>
 				<td>Enter CourseName</td>
-				<td><form:input type="text" path="courseName" /></td>
+				<td><form:input type="text" path="courseName" /><font color="red"><form:errors path="courseName"/></font></td>
 			</tr>
 
 			<tr>
 				<td>Enter Duration</td>
-				<td><form:input type="text" path="duration" /></td>
+				<td><form:input type="text" path="duration" /><font color="red"><form:errors path="duration"/></font></td>
 			</tr>
 
 			<tr>

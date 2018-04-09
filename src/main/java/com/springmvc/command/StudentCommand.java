@@ -1,17 +1,28 @@
 package com.springmvc.command;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class StudentCommand {
 
+	@Size(min=3,max=20)
 	private String name;
 	
+	@NotEmpty
 	private String qualification;
 	
+	@NotNull
 	private String gender;
 	
+	@NotEmpty
 	private String address;
 	
+	@NotEmpty
 	private String courseName;
 	
+	@NotEmpty
 	private String duration;
 
 	public String getName() {
